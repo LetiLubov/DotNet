@@ -1,0 +1,46 @@
+//http://acm.timus.ru/status.aspx?space=1&num=1131&author=220028
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+class Program
+{
+static void Main(string[] args)
+{
+string[] s = Console.ReadLine().Split(' ');
+int iComp = Convert.ToInt32(s[0]);
+int iWire = Convert.ToInt32(s[1]);
+int iAnswer = 0;
+int i = 0;
+int iNumber = 0;
+iComp--;
+while (iComp > 0)
+{
+if (iNumber < iWire)
+{
+iNumber = Convert.ToInt32(Math.Pow(Convert.ToDouble(2), Convert.ToDouble(i)));
+if (iNumber < iWire)
+iComp = iComp - iNumber;
+else
+iComp = iComp - iWire;
+iAnswer++;
+i++;
+}
+else
+{
+iAnswer += iComp / iWire;
+if (iComp % iWire >= 1)
+iAnswer++;
+iComp = 0;
+}
+}
+Console.WriteLine(iAnswer);
+Console.ReadKey();
+
+}
+}
+}
