@@ -1,0 +1,62 @@
+http://acm.timus.ru/problem.aspx?space=1&num=2023
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace timus1
+{
+    class Program
+    {
+
+        static string[,] sMatrix = {{ "Alice", "Ariel", "Aurora", "Phil", "Peter", "Olaf", "Phoebus", "Ralph", "Robin" },
+{ "Bambi", "Belle", "Bolt" , "Mulan", "Mowgli", "Mickey" , "Silver", "Simba", "Stitch" },
+{ "Dumbo", "Genie", "Jiminy" , "Kuzko", "Kida", "Kenai" , "Tarzan", "Tiana", "Winnie" } };
+        static void Main(string[] args)
+        {
+            int iSteps = 0;
+            int iOldFriend = 0;
+            int iNowFriend = 0;
+            int iNumberOfFriends = 0;
+            string[] sFriendsArray;
+
+            iNumberOfFriends = Convert.ToInt32(Console.ReadLine());
+
+
+            sFriendsArray = new string[iNumberOfFriends];
+            for (int i = 0; i < iNumberOfFriends; i++)
+            {
+                sFriendsArray[i] = Console.ReadLine();
+                iNowFriend = FindFriend(sFriendsArray[i]);
+
+
+            }
+            for (int i = 0; i < iNumberOfFriends; i++)
+            {
+                iNowFriend = FindFriend(sFriendsArray[i]);
+                iSteps += Math.Abs(iOldFriend - iNowFriend);
+                iOldFriend = iNowFriend;
+            }
+            Console.WriteLine(iSteps);
+
+
+
+        }
+        static int FindFriend(string name) //функция нахождения имени в шкафчиках
+        {
+            int iReturn = 3;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (name.Equals(sMatrix[i, j]))
+                        iReturn = i;
+
+                }
+            }
+            return iReturn;
+        }
+    }
+}
