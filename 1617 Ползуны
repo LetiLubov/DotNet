@@ -1,0 +1,46 @@
+//http://acm.timus.ru/problem.aspx?space=1&num=1617
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace timus2
+{
+class Program
+{
+static void Main(string[] args)
+{
+int iNumber = 0;
+int[] iArray;
+int[] iCheckArray;
+int iWheelNumber;
+int iTrainNumber = 0;
+iNumber = Convert.ToInt32(Console.ReadLine());
+iArray = new int[iNumber];
+iCheckArray = new int[iNumber];
+for (int i = 0; i < iNumber; i++)
+{
+iArray[i] = Convert.ToInt32(Console.ReadLine());
+iCheckArray[i] = 0;
+}
+for (int i = 0; i < iNumber; i++)
+{
+iWheelNumber = 0;
+if (iCheckArray[i] == 0)
+for (int j = i; j < iNumber; j++)
+{
+if (iArray[i] == iArray[j])
+{
+iWheelNumber += 1;
+iCheckArray[j] = 1;
+
+}
+}
+iTrainNumber += iWheelNumber / 4;
+}
+Console.WriteLine(iTrainNumber);
+
+}
+}
+}
