@@ -1,0 +1,37 @@
+//Всё, что от вас требуется — найти сумму всех целых чисел, лежащих между 1 и N включительно.
+//Исходные данные
+//В единственной строке расположено число N, по модулю не превосходящее 10000.
+//Результат
+//Выведите целое число — ответ задачи.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int iNumber = Convert.ToInt32(Console.ReadLine());
+            int iHelp = iNumber;
+            int iSumm =0;
+            if (iNumber >= 0)
+                iSumm = iNumber + iNumber * (iNumber - 1) / 2;
+            if (iNumber < -1)
+            {
+
+                iSumm = 1 - (-iNumber -iNumber * (-iNumber - 1) / 2) ;
+            }
+            if (iNumber == -1)
+                iSumm = 0;
+            if (iNumber == 0)
+                iSumm = 1;
+            Console.WriteLine(iSumm);
+            Console.ReadKey();
+        }
+    }
+}
