@@ -1,0 +1,12 @@
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\Nosql.exe.config
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\Nosql.exe
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\Nosql.pdb
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\HtmlAgilityPack.dll
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\HtmlAgilityPack.xml
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\obj\Debug\Nosql.csprojResolveAssemblyReference.cache
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\obj\Debug\Nosql.exe
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\obj\Debug\Nosql.pdb
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\LiteDB.dll
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\EntityFramework.dll
+C:\Users\kisa\Documents\Visual Studio 2012\Projects\Sharp\Nosql\Nosql\bin\Debug\EntityFramework.xml
