@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ulmartDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ulmartDBEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Author" EntityType="ulmartDBModel.Author" />
+    <EntitySet Name="Product" EntityType="ulmartDBModel.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="ulmartDBModel.sysdiagrams" />
+    <AssociationSet Name="FK_Product_Author" Association="ulmartDBModel.FK_Product_Author">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="author1" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Product" Relationship="ulmartDBModel.FK_Product_Author" FromRole="Author" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="author" Type="Int32" />
+    <Property Name="price" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Author1" Relationship="ulmartDBModel.FK_Product_Author" FromRole="Product" ToRole="Author" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Product_Author">
+    <End Role="Author" Type="ulmartDBModel.Author" Multiplicity="0..1" />
+    <End Role="Product" Type="ulmartDBModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
